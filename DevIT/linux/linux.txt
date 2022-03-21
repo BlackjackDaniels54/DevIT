@@ -1,0 +1,15 @@
+1. Перейдите в папку html и выведите список всех папок (без файлов)
+cd Desktop/var/www/html
+find . -maxdepth 1 -type d
+
+2. Объедините все файлы с расширением .txt в один /all.txt
+cd logs
+car *> all.txt
+
+3. Удалите пустые строки из файла error.txt
+grep -v '^[[:space:]]*$' error.txt
+
+5. Удалите все содержимое в файле access.txt не удаляя сам файл
+Если находимся в папке logs, то cat /dev/null > access.txt 
+Если находимся на старте, то прописываем полный путь cat /dev/null > Desktop/var/www/html/logs/access.txt
+
